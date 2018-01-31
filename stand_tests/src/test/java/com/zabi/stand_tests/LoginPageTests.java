@@ -19,7 +19,7 @@ public class LoginPageTests {
 	private static WebElement buttonLogin;
 	private static WebDriver driver;
 
-	@BeforeTest
+	@BeforeClass
 	public void startSetup() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -131,7 +131,7 @@ public class LoginPageTests {
 		Assert.assertEquals(driver.getCurrentUrl(), URL + "#vacation");
 	}
 
-	@AfterTest
+	@AfterClass
 	private static void stopTest() {
 		driver.quit();
 	}

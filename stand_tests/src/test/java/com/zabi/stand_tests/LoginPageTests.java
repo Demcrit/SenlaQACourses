@@ -2,23 +2,22 @@ package com.zabi.stand_tests;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
+
+import com.zabi.stand_tests.pageobjects.LoginPage;
+import com.zabi.stand_tests.user.User;
 
 public class LoginPageTests {
 
 	private static final String URL = "http://86.57.161.116:10008/";
-	private static WebElement login;
-	private static WebElement password;
-	private static WebElement checkBox;
-	private static WebElement buttonLogin;
 	private static WebDriver driver;
-
+	User user = new User();
+	
 	@BeforeClass
 	public void startSetup() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
@@ -30,106 +29,73 @@ public class LoginPageTests {
 	}
 
 	@Test
-	private static void LoginValidTest() throws InterruptedException {
-		login = driver.findElement(By.id("logininput"));
-		login.sendKeys("serge");
-		password = driver.findElement(By.id("passwordinput"));
-		password.sendKeys("empl");
-		new Actions(driver).sendKeys(Keys.ENTER).perform();
-		Thread.sleep(5000);
-		Assert.assertEquals(driver.getCurrentUrl(), URL + "#vacation");
+	private void LoginValidTest() throws InterruptedException {
+		LoginPage loginpage = PageFactory.initElements(driver, LoginPage.class);
+		loginpage.login(user.getLogin(),user.getPassword());
+		Assert.assertEquals(driver.getCurrentUrl(), URL + "#/vacation");
+		}
+
+	@Test
+	private void LoginWithClearForm() throws InterruptedException {
+		LoginPage loginpage = PageFactory.initElements(driver, LoginPage.class);
+		loginpage.login(user.getLogin(),user.getPassword());
+		Assert.assertEquals(driver.getCurrentUrl(), URL + "#login");
+		}
+
+	@Test
+	private void LoginValidTestWithCheckBox() throws InterruptedException {
+		WebElement checkBox = driver.findElement(By.id("checkboxesRemember-0"));
+		checkBox.click();
+		LoginPage loginpage = PageFactory.initElements(driver, LoginPage.class);
+		loginpage.login(user.getLogin(),user.getPassword());
+		Assert.assertEquals(driver.getCurrentUrl(), URL + "#/vacation");
+
 	}
 
 	@Test
-	private static void LoginWithClearForm() throws InterruptedException {
-		login = driver.findElement(By.id("logininput"));
-		login.sendKeys("serge");
-		password = driver.findElement(By.id("passwordinput"));
-		password.sendKeys("empl");
+	private void LoginIncorrectTest() throws InterruptedException {
+		LoginPage loginpage = PageFactory.initElements(driver, LoginPage.class);
+		loginpage.login(user.getLogin() + " blabla",user.getPassword());
+		Thread.sleep(5000);
+		Assert.assertEquals(driver.getCurrentUrl(), URL + "#login");
+	}
+
+	@Test
+	private void LoginIncorrectPasswordTest() throws InterruptedException {
+		LoginPage loginpage = PageFactory.initElements(driver, LoginPage.class);
+		loginpage.login(user.getLogin(),user.getPassword() + "fail");
+		Thread.sleep(5000);
+		Assert.assertEquals(driver.getCurrentUrl(), URL + "#login");
+	}
+
+	@Test
+	private void IncorrectLoginWithSpacesTest() throws InterruptedException {
+		LoginPage loginpage = PageFactory.initElements(driver, LoginPage.class);
+		loginpage.login(" " + user.getLogin()+ " ",user.getPassword());
+		Assert.assertEquals(driver.getCurrentUrl(), URL + "#login");
+	}
+
+	@Test
+	private void IncorrectLoginWithSymbolsTest() throws InterruptedException {
+		LoginPage loginpage = PageFactory.initElements(driver, LoginPage.class);
+		loginpage.login(user.getLogin() + " #$@",user.getPassword());
+		Assert.assertEquals(driver.getCurrentUrl(), URL + "#login");
+	}
+
+	@Test
+	private void EmptyPasswordTest() throws InterruptedException {
+		LoginPage loginpage = PageFactory.initElements(driver, LoginPage.class);
+		loginpage.login(user.getLogin(),"");
+		Assert.assertEquals(driver.getCurrentUrl(), URL + "#login");
+	}
+	
+	@Test
+	private void ButtonResetTest() throws InterruptedException {
+		LoginPage loginpage = PageFactory.initElements(driver, LoginPage.class);
+		loginpage.login(user.getLogin(),user.getPassword());
 		WebElement x = driver.findElement(By.id("buttonReset"));
 		x.click();
-		Thread.sleep(5000);
-	}
-
-	@Test
-	private static void LoginValidTestWithCheckBox() throws InterruptedException {
-		login = driver.findElement(By.id("logininput"));
-		login.sendKeys("serge");
-		password = driver.findElement(By.id("passwordinput"));
-		password.sendKeys("empl");
-		checkBox = driver.findElement(By.id("checkboxesRemember-0"));
-		checkBox.click();
-		new Actions(driver).sendKeys(Keys.ENTER).perform();
-		Thread.sleep(5000);
-		Assert.assertEquals(driver.getCurrentUrl(), URL + "#vacation");
-
-	}
-
-	@Test
-	private static void LoginIncorrectTest() throws InterruptedException {
-		login = driver.findElement(By.id("logininput"));
-		login.sendKeys("grommash");
-		password = driver.findElement(By.id("passwordinput"));
-		password.sendKeys("empl");
-		new Actions(driver).sendKeys(Keys.ENTER).perform();
-		Thread.sleep(5000);
-		Assert.assertEquals(driver.getCurrentUrl(), URL + "#login");
-	}
-
-	@Test
-	private static void LoginIncorrectPasswordTest() throws InterruptedException {
-		login = driver.findElement(By.id("logininput"));
-		login.sendKeys("serge");
-		password = driver.findElement(By.id("passwordinput"));
-		password.sendKeys("1111");
-		new Actions(driver).sendKeys(Keys.ENTER).perform();
-		Thread.sleep(5000);
-		Assert.assertEquals(driver.getCurrentUrl(), URL + "#login");
-	}
-
-	@Test
-	private static void LoginIncorrectLoginWithSpacesTest() throws InterruptedException {
-		login = driver.findElement(By.id("logininput"));
-		login.sendKeys("s er ge");
-		password = driver.findElement(By.id("passwordinput"));
-		password.sendKeys("empl");
-		new Actions(driver).sendKeys(Keys.ENTER).perform();
-		Thread.sleep(5000);
-		Assert.assertEquals(driver.getCurrentUrl(), URL + "#login");
-	}
-
-	@Test
-	private static void LoginIncorrectLoginWithSymbolsTest() throws InterruptedException {
-		login = driver.findElement(By.id("logininput"));
-		login.sendKeys("s%er#g@e");
-		password = driver.findElement(By.id("passwordinput"));
-		password.sendKeys("empl");
-		new Actions(driver).sendKeys(Keys.ENTER).perform();
-		Thread.sleep(5000);
-		Assert.assertEquals(driver.getCurrentUrl(), URL + "#login");
-	}
-
-	@Test
-	private static void EmptyPasswordTest() throws InterruptedException {
-		login = driver.findElement(By.id("logininput"));
-		login.sendKeys("serge");
-		password = driver.findElement(By.id("passwordinput"));
-		password.sendKeys();
-		new Actions(driver).sendKeys(Keys.ENTER).perform();
-		Thread.sleep(5000);
-		Assert.assertEquals(driver.getCurrentUrl(), URL + "#login");
-	}
-
-	@Test
-	private static void SubmitButtonTest() throws InterruptedException {
-		login = driver.findElement(By.id("logininput"));
-		login.sendKeys("serge");
-		password = driver.findElement(By.id("passwordinput"));
-		password.sendKeys("empl");
-		buttonLogin.click();
-		Thread.sleep(5000);
-		Assert.assertEquals(driver.getCurrentUrl(), URL + "#vacation");
-	}
+		}
 
 	@AfterClass
 	private static void stopTest() {

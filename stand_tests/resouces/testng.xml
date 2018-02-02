@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="PageObject suite" verbose="1" >
+  <test name="RMT test" >
+    <classes>
+      <class name="com.zabi.stand_tests.LoginPageTests"/>
+      <class name="com.zabi.stand_tests.UserCredsTests"/>
+      </classes>
+ </test>
+</suite>

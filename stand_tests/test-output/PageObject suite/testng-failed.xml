@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [PageObject suite]">
+  <test name="RMT test(failed)">
+    <classes>
+      <class name="com.zabi.stand_tests.UserCredsTests">
+        <methods>
+          <include name="officceCheck"/>
+          <include name="locationCheck"/>
+          <include name="skypeCheck"/>
+          <include name="emailCheck"/>
+          <include name="phoneNumberCheck"/>
+          <include name="workstationCheck"/>
+          <include name="nameCheck"/>
+          <include name="commentCheck"/>
+          <include name="startSetup"/>
+          <include name="specializationCheck"/>
+        </methods>
+      </class> <!-- com.zabi.stand_tests.UserCredsTests -->
+      <class name="com.zabi.stand_tests.LoginPageTests">
+        <methods>
+          <include name="LoginIncorrectTest"/>
+          <include name="LoginIncorrectPasswordTest"/>
+          <include name="LoginValidTestWithCheckBox"/>
+          <include name="stopTest"/>
+          <include name="EmptyPasswordTest"/>
+          <include name="startSetup"/>
+          <include name="IncorrectLoginWithSymbolsTest"/>
+          <include name="IncorrectLoginWithSpacesTest"/>
+          <include name="LoginValidTest"/>
+          <include name="LoginWithClearForm"/>
+        </methods>
+      </class> <!-- com.zabi.stand_tests.LoginPageTests -->
+    </classes>
+  </test> <!-- RMT test(failed) -->
+</suite> <!-- Failed suite [PageObject suite] -->

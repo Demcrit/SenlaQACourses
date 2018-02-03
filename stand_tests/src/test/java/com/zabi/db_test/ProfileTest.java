@@ -1,4 +1,4 @@
-package com.zabi.stand_tests;
+package com.zabi.db_test;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
@@ -8,12 +8,15 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import com.zabi.stand_tests.pageobjects.ProfilePage;
 
-public class UserCredsTests {
+public class ProfileTest {
+
 	private static WebDriver driver;
 	private static final String URL = "http://86.57.161.116:10008/";
 	ProfilePage profilePage = PageFactory.initElements(driver, ProfilePage.class);
+	Profile profile;
 
 	@BeforeClass
 	public void startSetup() throws InterruptedException {
@@ -23,51 +26,52 @@ public class UserCredsTests {
 		driver.navigate().to(URL + "#/login");
 		driver.manage().window().maximize();
 		profilePage.getUserMenu();
-	}
-
+		profile  = new HibernateUtil().getEmployee();
+}
+	
 	@Test
 	public void nameCheck() {
-		Assert.assertEquals(profilePage.getName(), "Serge Tankjan");
+		Assert.assertEquals(profilePage.getName(),profile.getFirst_name());
 	}
 
 	@Test
 	public void emailCheck() {
-		Assert.assertEquals(profilePage.getEmail(), "serge@tankjan.com");
+		Assert.assertEquals(profilePage.getEmail(), profile.getEmail());
 	}
 
 	@Test
 	public void phoneNumberCheck() {
-		Assert.assertEquals(profilePage.getPhone(), "8-029-4739564");
+		Assert.assertEquals(profilePage.getPhone(), profile.getPhone());
 	}
 
 	@Test
 	public void skypeCheck() {
-		Assert.assertEquals(profilePage.getSkype(), "s_tan");
+		Assert.assertEquals(profilePage.getSkype(),profile.getSkype());
 	}
 
 	@Test
 	public void locationCheck() {
-		Assert.assertEquals(profilePage.getLocation(), "BLR_GRO");
+		Assert.assertEquals(profilePage.getLocation(), profile.getLocation_fk().getCountry());
 	}
 
 	@Test
-	public void officceCheck() {
-		Assert.assertEquals(profilePage.getOffice(), "1");
+	public void officeCheck() {
+		Assert.assertEquals(profilePage.getOffice(),profile.getLocation_fk().getOffice());
 	}
 
 	@Test
 	public void specializationCheck() {
-		Assert.assertEquals(profilePage.getSpecialization(), "Developer");
+		Assert.assertEquals(profilePage.getSpecialization(),profile.getSpecialization_fk().getName());
 	}
 
 	@Test
 	public void workstationCheck() {
-		Assert.assertEquals(profilePage.getWorkstation(), "dancogrod0067");
+		Assert.assertEquals(profilePage.getWorkstation(), profile.getWorkstation());
 	}
 
 	@Test
 	public void commentCheck() {
-		Assert.assertEquals(profilePage.getComment(), "comment6");
+		Assert.assertEquals(profilePage.getComment(),profile.getRm_comment());
 	}
 
 	@AfterClass

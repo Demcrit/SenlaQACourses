@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG:  Unit Test</title>
+<style type="text/css">
+table caption,table.info_table,table.result,table.passed,table.failed {margin-bottom:10px;border:1px solid #000099;border-collapse:collapse;empty-cells:show;}
+table.info_table td,table.info_table th,table.result td,table.result th,table.passed td,table.passed th,table.failed td,table.failed th {
+border:1px solid #000099;padding:.25em .5em .25em .5em
+}
+table.result th {vertical-align:bottom}
+tr.param th {padding-left:1em;padding-right:1em}
+tr.param td {padding-left:.5em;padding-right:2em}
+td.numi,th.numi,td.numi_attn {
+text-align:right
+}
+tr.total td {font-weight:bold}
+table caption {
+text-align:center;font-weight:bold;
+}
+table.passed tr.stripe td,table tr.passedodd td {background-color: #00AA00;}
+table.passed td,table tr.passedeven td {background-color: #33FF33;}
+table.passed tr.stripe td,table tr.skippedodd td {background-color: #cccccc;}
+table.passed td,table tr.skippedodd td {background-color: #dddddd;}
+table.failed tr.stripe td,table tr.failedodd td,table.result td.numi_attn {background-color: #FF3333;}
+table.failed td,table tr.failedeven td,table.result tr.stripe td.numi_attn {background-color: #DD0000;}
+tr.stripe td,tr.stripe th {background-color: #E6EBF9;}
+p.totop {font-size:85%;text-align:center;border-bottom:2px black solid}
+div.shootout {padding:2em;border:3px #4854A8 solid}
+</style>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em">RMT test</td><td class="numi">1</td><td class="numi">1</td><td class="numi_attn">9</td><td class="numi_attn">8</td><td class="numi">11,9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="passed" id="summary">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">RMT test &#8212; failed (configuration methods)</th></tr>
+<tr class="failedodd"><td rowspan="1">com.zabi.stand_tests.UserCredsTests</td><td><a href="#m1"><b>startSetup</b>  </a></td><td class="numi">1</td><td>1517573144696</td><td class="numi">0</td></tr>
+<tr><th colspan="4">RMT test &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="8">com.zabi.stand_tests.LoginPageTests</td><td><a href="#m2"><b>EmptyPasswordTest</b>  </a></td><td class="numi">1</td><td>1517573143406</td><td class="numi">172</td></tr><tr class="failedodd"><td><a href="#m3"><b>IncorrectLoginWithSpacesTest</b>  </a></td><td class="numi">1</td><td>1517573143585</td><td class="numi">13</td></tr><tr class="failedodd"><td><a href="#m4"><b>IncorrectLoginWithSymbolsTest</b>  </a></td><td class="numi">1</td><td>1517573143601</td><td class="numi">8</td></tr><tr class="failedodd"><td><a href="#m5"><b>LoginIncorrectPasswordTest</b>  </a></td><td class="numi">1</td><td>1517573143611</td><td class="numi">9</td></tr><tr class="failedodd"><td><a href="#m6"><b>LoginIncorrectTest</b>  </a></td><td class="numi">1</td><td>1517573143622</td><td class="numi">12</td></tr><tr class="failedodd"><td><a href="#m7"><b>LoginValidTest</b>  </a></td><td class="numi">1</td><td>1517573143635</td><td class="numi">9</td></tr><tr class="failedodd"><td><a href="#m8"><b>LoginValidTestWithCheckBox</b>  </a></td><td class="numi">1</td><td>1517573143646</td><td class="numi">90</td></tr><tr class="failedodd"><td><a href="#m9"><b>LoginWithClearForm</b>  </a></td><td class="numi">1</td><td>1517573143741</td><td class="numi">14</td></tr>
+<tr><th colspan="4">RMT test &#8212; skipped (configuration methods)</th></tr>
+<tr class="skippedodd"><td rowspan="1">com.zabi.stand_tests.UserCredsTests</td><td><a href="#m10"><b>stopTest</b>  </a></td><td class="numi">1</td><td>1517573149780</td><td class="numi">0</td></tr>
+<tr><th colspan="4">RMT test &#8212; skipped</th></tr>
+<tr class="skippedodd"><td rowspan="9">com.zabi.stand_tests.UserCredsTests</td><td><a href="#m11"><b>commentCheck</b>  </a></td><td class="numi">1</td><td>1517573149745</td><td class="numi">2</td></tr><tr class="skippedodd"><td><a href="#m12"><b>emailCheck</b>  </a></td><td class="numi">1</td><td>1517573149748</td><td class="numi">2</td></tr><tr class="skippedodd"><td><a href="#m13"><b>locationCheck</b>  </a></td><td class="numi">1</td><td>1517573149752</td><td class="numi">5</td></tr><tr class="skippedodd"><td><a href="#m14"><b>nameCheck</b>  </a></td><td class="numi">1</td><td>1517573149759</td><td class="numi">1</td></tr><tr class="skippedodd"><td><a href="#m15"><b>officceCheck</b>  </a></td><td class="numi">1</td><td>1517573149761</td><td class="numi">1</td></tr><tr class="skippedodd"><td><a href="#m16"><b>phoneNumberCheck</b>  </a></td><td class="numi">1</td><td>1517573149764</td><td class="numi">1</td></tr><tr class="skippedodd"><td><a href="#m17"><b>skypeCheck</b>  </a></td><td class="numi">1</td><td>1517573149766</td><td class="numi">1</td></tr><tr class="skippedodd"><td><a href="#m18"><b>specializationCheck</b>  </a></td><td class="numi">1</td><td>1517573149768</td><td class="numi">0</td></tr><tr class="skippedodd"><td><a href="#m19"><b>workstationCheck</b>  </a></td><td class="numi">1</td><td>1517573149770</td><td class="numi">8</td></tr>
+<tr><th colspan="4">RMT test &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">com.zabi.stand_tests.LoginPageTests</td><td><a href="#m20"><b>ButtonResetTest</b>  </a></td><td class="numi">1</td><td>1517573143027</td><td class="numi">377</td></tr>
+</table>
+<h1>RMT test</h1>
+<h2 id="m1">com.zabi.stand_tests.UserCredsTests:startSetup</h2>
+<div style="padding-left:3em">
+<p>java.lang.reflect.InvocationTargetException</p>
+org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:138)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.pageobjects.ProfilePage.getUserMenu(ProfilePage.java:42)
+<br/>at com.zabi.stand_tests.UserCredsTests.startSetup(UserCredsTests.java:27)
+<br/>25 lines not shown
+<p>Caused by null</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.pageobjects.ProfilePage.getUserMenu(ProfilePage.java:42)
+<br/>at com.zabi.stand_tests.UserCredsTests.startSetup(UserCredsTests.java:27)
+<br/>25 lines not shown
+<p>Caused by null</p>
+com.zabi.stand_tests.pageobjects.LoginPage.&lt;init&gt;(LoginPage.java:24)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.pageobjects.ProfilePage.getUserMenu(ProfilePage.java:42)
+<br/>at com.zabi.stand_tests.UserCredsTests.startSetup(UserCredsTests.java:27)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">com.zabi.stand_tests.LoginPageTests:IncorrectLoginWithSpacesTest</h2>
+<div style="padding-left:3em">
+<p>java.lang.reflect.InvocationTargetException</p>
+org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:138)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.IncorrectLoginWithSpacesTest(LoginPageTests.java:73)
+<br/>25 lines not shown
+<p>Caused by null</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.IncorrectLoginWithSpacesTest(LoginPageTests.java:73)
+<br/>25 lines not shown
+<p>Caused by This is not login page!</p>
+com.zabi.stand_tests.pageobjects.LoginPage.&lt;init&gt;(LoginPage.java:26)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.IncorrectLoginWithSpacesTest(LoginPageTests.java:73)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">com.zabi.stand_tests.LoginPageTests:LoginIncorrectTest</h2>
+<div style="padding-left:3em">
+<p>java.lang.reflect.InvocationTargetException</p>
+org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:138)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.LoginIncorrectTest(LoginPageTests.java:57)
+<br/>25 lines not shown
+<p>Caused by null</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.LoginIncorrectTest(LoginPageTests.java:57)
+<br/>25 lines not shown
+<p>Caused by This is not login page!</p>
+com.zabi.stand_tests.pageobjects.LoginPage.&lt;init&gt;(LoginPage.java:26)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.LoginIncorrectTest(LoginPageTests.java:57)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m4">com.zabi.stand_tests.LoginPageTests:EmptyPasswordTest</h2>
+<div style="padding-left:3em">
+<p>expected [http://86.57.161.116:10008/#login] but found [http://86.57.161.116:10008/#/vacation]</p>
+org.testng.Assert.fail(Assert.java:94)
+<br/>at org.testng.Assert.failNotEquals(Assert.java:494)
+<br/>at org.testng.Assert.assertEquals(Assert.java:123)
+<br/>at org.testng.Assert.assertEquals(Assert.java:176)
+<br/>at org.testng.Assert.assertEquals(Assert.java:186)
+<br/>at com.zabi.stand_tests.LoginPageTests.EmptyPasswordTest(LoginPageTests.java:89)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m5">com.zabi.stand_tests.LoginPageTests:IncorrectLoginWithSymbolsTest</h2>
+<div style="padding-left:3em">
+<p>java.lang.reflect.InvocationTargetException</p>
+org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:138)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.IncorrectLoginWithSymbolsTest(LoginPageTests.java:80)
+<br/>25 lines not shown
+<p>Caused by null</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.IncorrectLoginWithSymbolsTest(LoginPageTests.java:80)
+<br/>25 lines not shown
+<p>Caused by This is not login page!</p>
+com.zabi.stand_tests.pageobjects.LoginPage.&lt;init&gt;(LoginPage.java:26)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.IncorrectLoginWithSymbolsTest(LoginPageTests.java:80)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m6">com.zabi.stand_tests.LoginPageTests:LoginWithClearForm</h2>
+<div style="padding-left:3em">
+<p>java.lang.reflect.InvocationTargetException</p>
+org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:138)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.LoginWithClearForm(LoginPageTests.java:40)
+<br/>25 lines not shown
+<p>Caused by null</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.LoginWithClearForm(LoginPageTests.java:40)
+<br/>25 lines not shown
+<p>Caused by This is not login page!</p>
+com.zabi.stand_tests.pageobjects.LoginPage.&lt;init&gt;(LoginPage.java:26)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.LoginWithClearForm(LoginPageTests.java:40)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m7">com.zabi.stand_tests.LoginPageTests:LoginValidTestWithCheckBox</h2>
+<div style="padding-left:3em">
+<p>java.lang.reflect.InvocationTargetException</p>
+org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:138)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.LoginValidTestWithCheckBox(LoginPageTests.java:49)
+<br/>25 lines not shown
+<p>Caused by null</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.LoginValidTestWithCheckBox(LoginPageTests.java:49)
+<br/>25 lines not shown
+<p>Caused by This is not login page!</p>
+com.zabi.stand_tests.pageobjects.LoginPage.&lt;init&gt;(LoginPage.java:26)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.LoginValidTestWithCheckBox(LoginPageTests.java:49)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m8">com.zabi.stand_tests.LoginPageTests:LoginIncorrectPasswordTest</h2>
+<div style="padding-left:3em">
+<p>java.lang.reflect.InvocationTargetException</p>
+org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:138)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.LoginIncorrectPasswordTest(LoginPageTests.java:65)
+<br/>25 lines not shown
+<p>Caused by null</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.LoginIncorrectPasswordTest(LoginPageTests.java:65)
+<br/>25 lines not shown
+<p>Caused by This is not login page!</p>
+com.zabi.stand_tests.pageobjects.LoginPage.&lt;init&gt;(LoginPage.java:26)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.LoginIncorrectPasswordTest(LoginPageTests.java:65)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m9">com.zabi.stand_tests.LoginPageTests:LoginValidTest</h2>
+<div style="padding-left:3em">
+<p>java.lang.reflect.InvocationTargetException</p>
+org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:138)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.LoginValidTest(LoginPageTests.java:33)
+<br/>25 lines not shown
+<p>Caused by null</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.LoginValidTest(LoginPageTests.java:33)
+<br/>25 lines not shown
+<p>Caused by This is not login page!</p>
+com.zabi.stand_tests.pageobjects.LoginPage.&lt;init&gt;(LoginPage.java:26)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:129)
+<br/>at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+<br/>at com.zabi.stand_tests.LoginPageTests.LoginValidTest(LoginPageTests.java:33)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m10">com.zabi.stand_tests.UserCredsTests:stopTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m11">com.zabi.stand_tests.UserCredsTests:specializationCheck</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m12">com.zabi.stand_tests.UserCredsTests:locationCheck</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m13">com.zabi.stand_tests.UserCredsTests:officceCheck</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m14">com.zabi.stand_tests.UserCredsTests:emailCheck</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m15">com.zabi.stand_tests.UserCredsTests:commentCheck</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m16">com.zabi.stand_tests.UserCredsTests:nameCheck</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m17">com.zabi.stand_tests.UserCredsTests:phoneNumberCheck</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m18">com.zabi.stand_tests.UserCredsTests:workstationCheck</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m19">com.zabi.stand_tests.UserCredsTests:skypeCheck</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m20">com.zabi.stand_tests.LoginPageTests:ButtonResetTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>

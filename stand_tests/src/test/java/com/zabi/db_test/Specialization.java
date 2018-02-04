@@ -9,7 +9,7 @@ import javax.persistence.Table;
 public class Specialization {
 
     @Id
-    private long specialization_id;
+    private int specialization_id;
     private String name;
 
     public long getSpecialization_id() {
@@ -20,7 +20,7 @@ public class Specialization {
         return name;
     }
 
-    public void setSpecialization_id(long specialization_id) {
+    public void setSpecialization_id(int specialization_id) {
         this.specialization_id = specialization_id;
     }
 

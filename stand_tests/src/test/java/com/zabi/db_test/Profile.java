@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class Profile {
 
 	@Id
-	private long employee_id;
+	private int employee_id;
 	private String first_name;
 	private String middle_name;
 	private String last_name;
@@ -45,7 +45,7 @@ public class Profile {
 		return employee_id;
 	}
 
-	public void setEmployee_id(long employee_id) {
+	public void setEmployee_id(int employee_id) {
 		this.employee_id = employee_id;
 	}
 

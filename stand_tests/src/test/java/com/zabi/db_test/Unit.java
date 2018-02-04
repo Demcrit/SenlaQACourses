@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Table(name = "unit")
 public class Unit {
 	@Id
-	private long unit_id;
+	private int unit_id;
 	private String unit_name;
 
 	public long getUnit_id() {
@@ -19,7 +19,7 @@ public class Unit {
 		return unit_name;
 	}
 
-	public void setUnit_id(long unit_id) {
+	public void setUnit_id(int unit_id) {
 		this.unit_id = unit_id;
 	}
 

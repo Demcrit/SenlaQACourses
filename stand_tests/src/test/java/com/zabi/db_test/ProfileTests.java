@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import com.zabi.stand_tests.pageobjects.ProfilePage;
 
-public class ProfileTest {
+public class ProfileTests {
 
 	private static WebDriver driver;
 	private static final String URL = "http://86.57.161.116:10008/";
@@ -26,7 +26,7 @@ public class ProfileTest {
 		driver.navigate().to(URL + "#/login");
 		driver.manage().window().maximize();
 		profilePage.getUserMenu();
-		profile  = new HibernateUtil().getEmployee();
+		profile  = new HibernateUtil().getProfile();
 }
 	
 	@Test

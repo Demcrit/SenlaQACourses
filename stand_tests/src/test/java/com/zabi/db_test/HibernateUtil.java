@@ -14,10 +14,10 @@ public class HibernateUtil {
         sessionFactory = new MetadataSources(serviceRegistry).buildMetadata().buildSessionFactory();
     }
 
-    public Profile getEmployee() {
+    public Profile getProfile() {
         Profile empl;
         try (Session session = sessionFactory.openSession()) {
-            empl = session.find(Profile.class,3L);
+            empl = session.find(Profile.class,6);
         }
         return empl;
     }
